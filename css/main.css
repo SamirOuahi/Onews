@@ -1,0 +1,410 @@
+:root {
+  --color-vivid : #007bff;
+  --color-vivid-hover : #0056b3;
+  --neutral-color-light: #ffffff;
+  --neutral-color-light-transparent: rgba(255,255,255,0.3);
+  --neutral-color-medium : #f9f9f9;
+  --neutral-color-dark : #eaeaea;
+  --neutral-color-extra-dark : #9a9a9a;
+  --neutral-color-utlra-dark: black;
+  --category-color-work : #0766F0;
+  --category-color-team : #DC5E53;
+  --category-color-news : #98DC62;
+  --text-shadow: rgba(0,0,0,0.7) 0 0 3px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--neutral-color-utlra-dark);
+}
+
+.container {
+  display: flex;
+}
+
+.header-standard{
+  width: 50vw;
+  height: 100vh;
+  background-image: url(../images/nicole.jpg);
+  background-size: cover;
+  background-position-y: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--neutral-color-light);
+  padding: 2rem;
+  font-size: 1.2em;
+  box-sizing: border-box;
+  position: fixed;
+}
+
+.main-standard{
+  width: 50vw;
+  height: 100vh;
+  box-sizing: border-box;
+  font-size: 1.2em;
+  margin-left: 50vw;
+}
+
+.logo{
+  display: block;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: bold;
+  width: 6em;
+  padding-left: 2em;
+  background-image: url(../images/onews.svg);
+  background-repeat: no-repeat;
+  background-size: 1.5em;
+  text-decoration: none;
+}
+
+.header-standard > .logo{
+  margin-top: 1em;
+}
+
+.header-standard__page-title{
+  background-color: var(--neutral-color-light-transparent);
+  padding: 1em;
+  text-align: right;
+  text-shadow: var(--text-shadow);
+}
+
+.header-standard__page-title > h1{
+  font-size: 2em;
+  font-weight: bold;
+  line-height:0.7em;
+}
+
+.header-standard__page-title > h1 > span{
+  font-size: 0.5em;
+  font-weight: normal;
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.header-standard__page-title > p{
+  margin: 1em 0;
+  line-height: 1.5em;
+}
+
+.header-standard__nav {
+  text-shadow: var(--text-shadow);
+}
+
+.header-standard__nav > ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
+}
+
+.header-standard__nav .link{
+  text-decoration: none;
+}
+
+.header-standard__nav .link:hover{
+  text-decoration: underline;
+}
+
+.link--light{
+  color: var(--neutral-color-light);
+}
+
+.main-standard__title{
+  background-color: var(--neutral-color-medium);
+  font-size: 2em;
+  font-weight: bold;
+  padding: 1em;
+  border-bottom: solid 1px var(--neutral-color-dark);
+}
+
+.content-standard{
+  padding: 2em;
+}
+
+.content-standard p, .main-standard p{
+  line-height: 1.5em;
+}
+
+.article-list{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+
+.article-preview{
+  position: relative;
+  box-sizing: border-box;
+  width: 50%;
+  border: solid 1px var(--neutral-color-dark);
+  padding: 1em;
+}
+
+.tag{
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: bold;
+  background-color: var(--neutral-color-medium);
+  border-radius: 3px;
+  padding: 0.4em;
+}
+
+.article-preview .tag{
+  position: absolute;
+  top: 1.3em;
+  left: 1.3em;
+  transition: top 1s;
+}
+
+.article-preview:hover .tag{
+  top: 0em;
+}
+
+.background-team {
+  background-color: var(--category-color-team);
+  color: var(--neutral-color-light);
+}
+
+.background-news {
+  background-color: var(--category-color-news);
+  color: var(--neutral-color-light);
+}
+
+.background-work {
+  background-color: var(--category-color-work);
+  color: var(--neutral-color-light);
+}
+
+.subtitle{
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.5em;
+  margin: 1em 0;
+}
+
+.article-preview__infos{
+  font-size: 0.8em;
+  font-weight: bold;
+  padding-left: 2.5em;
+  background-repeat: no-repeat;
+  background-size: contain;
+  line-height: 2em;
+}
+
+.article-preview__infos > span{
+  color: var(--neutral-color-extra-dark);
+  font-weight: normal;
+  padding-left: 0.5em;
+}
+
+.article-preview__excerpt{
+  margin: 1em 0;
+}
+
+.article-preview .article-preview__read-more{
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.article-preview:hover .article-preview__read-more{
+  opacity: 1;
+}
+
+.article-preview__read-more > .link{
+  color: var(--color-vivid);
+  font-weight: bold;
+}
+
+.article-preview__read-more > .link:hover{
+  color: var(--color-vivid-hover);
+}
+
+.form-contact {
+  width: 50%;
+  margin: 3em auto;
+}
+
+.input-group {
+  margin: 1em 0;
+}
+
+.input-group > label {
+  display: block;
+  margin: 0.5em 0;
+}
+
+.field{
+  font-size: 1.5rem;
+  padding: 0.5em;
+  border: solid 1px var(--neutral-color-extra-dark);
+  border-radius: 0.5em;
+  width: 100%;
+}
+
+textarea.field {
+  resize: vertical;
+  font-family: sans-serif;
+}
+
+.btn {
+  font-size: 1.5rem;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  border: none;
+}
+
+.btn-center {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.btn-vivid {
+  background-color: var(--color-vivid);
+  color: var(--neutral-color-light);
+}
+
+.btn-vivid:hover{
+  background-color: var(--color-vivid-hover);
+}
+
+.burger-menu {
+  display: none;
+}
+
+/*
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+*/
+/*
+Si on fait du mobile-first on utilisera min-width dans les conditions
+Dans notre cas (destop first) on utilisera max-width pour féinir les règles particulières du mobiles
+*/
+@media screen and (max-width: 480px){
+
+  .container {
+    flex-direction: column;
+  }
+
+  .header-standard{
+    width: 100vw;
+    height: 50vh;
+    position: static;
+    padding: 1rem;
+  }
+
+  .main-standard{
+    width: 100vw;
+    margin: 0;
+  }
+
+  .logo{
+    font-size: 1.3em;
+    text-shadow: var(--text-shadow);
+  }
+
+  .header-standard > .logo{
+    margin: 0;
+  }
+
+  .header-standard__page-title{
+    font-size: 0.7em;
+  }
+
+  .main-standard__title{
+    display: none;
+  }
+
+  .article-preview{
+    width: 100%;
+  }
+
+  .header-standard__nav {
+    display: none;
+    background-color: var(--neutral-color-light);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vh;
+    padding: 2em;
+  }
+
+  .header-standard__nav > ul {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .header-standard__nav a{
+    color: var(--neutral-color-utlra-dark);
+    text-decoration: none;
+    text-shadow: none;
+  }
+
+  .burger-menu{
+    display:block;
+  }
+
+  .burger-menu {
+    display: block;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    
+    cursor: pointer;
+    
+    z-index: 2; /* and place it over the hamburger */
+  }
+
+  .burger-menu input {
+    position:absolute;
+    width: 2em;
+    height: 2em;
+    opacity: 0; /* hide this */
+    z-index: 10;
+    -webkit-touch-callout: none;
+  }
+
+  .burger-menu span {
+    display: block;
+    pointer-events:none;
+    width: 100%;
+    height: 0.2em;
+    margin-bottom: 0.4em;
+    position: relative;
+    box-shadow: rgba(0,0,0,0.5) 1px 1px 0;
+    
+    background: var(--neutral-color-light);
+    border-radius: 0.1em;
+    
+    z-index: 1;
+    
+    transform-origin: 0.1em 0;
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+
+  .burger-menu input:checked ~ .header-standard__nav{
+    display: block;
+    position: absolute;
+    top: -1em;
+    left: calc(-100vw + 3em);
+  }
+
+}
